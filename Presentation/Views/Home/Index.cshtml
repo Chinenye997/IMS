@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+   
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-box-seam me-2"></i>Chi's Inventory
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Auth" asp-action="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Auth" asp-action="Register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Sliding Carousel -->
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-bg" style="background-image: url('/images/hero/Hero1.jpg');"></div>
+                <div class="carousel-content">
+                    <h1 class="display-3 fw-bold mb-4">Smart Inventory Management</h1>
+                    <p class="lead fs-4 mb-5">Track, manage, and optimize your products in real-time</p>
+                    <a href="/Auth/Register" class="btn btn-primary btn-lg px-3">Get Started</a> <!-- Updated to Register page -->
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-bg" style="background-image: url('/images/hero/Hero2.jpg');"></div>
+                <div class="carousel-content">
+                    <h1 class="display-3 fw-bold mb-4">Streamline Your Control</h1>
+                    <p class="lead fs-4 mb-5">
+                        Reduce waste and boost efficiency with accurate, up-to-the-minute inventory data.
+                    </p>
+                    <a href="/Auth/Register" class="btn btn-primary btn-lg px-3">Start Optimizing </a> 
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-bg" style="background-image: url('/images/hero/Hero3.jpg');"></div>
+                <div class="carousel-content">
+                    <h1 class="display-3 fw-bold mb-4">Empower Your Business Growth</h1>
+                    <p class="lead fs-4 mb-5">Make data-driven decisions with comprehensive reports</p>
+                    <a href="/Auth/Register" class="btn btn-primary btn-lg px-3">Try Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Manage Any Product Type</h2>
+                <p class="lead">Our system works perfectly for all your inventory needs</p>
+            </div>
+
+            <div class="row">
+                <!-- Laptop Product Card -->
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <a asp-controller="Store" asp-action="Index">
+                            <img src="/images/Laptop.jpeg" class="card-img-top" alt="Laptop Inventory">
+                        </a>
+                        <div class="card-body">
+                            <h3 class="card-title">Electronics</h3>
+                            <p class="card-text">
+                                Track laptops, accessories, and tech products with serial numbers,
+                                warranty periods, and technical specifications.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Barcode scanning</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Warranty tracking</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Component-level inventory</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- T-Shirt Product Card -->
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <a asp-controller="Store" asp-action="Index">
+                            <img src="/images/T-Shirt.jpeg" class="card-img-top" alt="Apparel Inventory">
+                        </a>
+                        <div class="card-body">
+                            <h3 class="card-title">Apparel</h3>
+                            <p class="card-text">
+                                Manage clothing inventory by size, color, and style. Track seasonal
+                                items and manage stock across multiple locations.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Size/color variants</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Seasonal tracking</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Fabric composition</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sofa Product Card -->
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <a asp-controller="Store" asp-action="Index">
+                            <img src="/images/Sofas.jpeg" class="card-img-top" alt="Furniture Inventory">
+                        </a>
+                        <div class="card-body">
+                            <h3 class="card-title">Furniture</h3>
+                            <p class="card-text">
+                                Handle large items with assembly tracking, warehouse positioning,
+                                and delivery management. Perfect for showrooms.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Assembly tracking</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Warehouse mapping</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Delivery scheduling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold">40%</h3>
+                        <p class="lead">Reduction in Stock Shortages</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold">41%</h3>
+                        <p class="lead">Faster Inventory Processing</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold">2x</h3>
+                        <p class="lead">Faster Decision Making</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Chi's Inventory</h5>
+                    <p>Streamline your stock control and boost business efficiency</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white me-3">Terms of Service</a>
+                    <a href="#" class="text-white">Contact Us</a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2023 Chi's Inventory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Carousel initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('heroCarousel');
+
+            // Initialize with 10-second interval
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 5000,
+                wrap: true
+            });
+
+            // Debug: Check if images are loading
+            const bgImages = document.querySelectorAll('.carousel-bg');
+            bgImages.forEach((bg, index) => {
+                const imgUrl = bg.style.backgroundImage.replace('url("', '').replace('")', '');
+                console.log(`Slide ${index+1} image: ${imgUrl}`);
+            });
+        });
+    </script>
+</body>
+</html>

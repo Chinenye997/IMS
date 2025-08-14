@@ -1,0 +1,59 @@
+﻿@model List<Application.DTOs.ProductResponse>
+@{
+    ViewData["Title"] = "Low Stock Products";
+    Layout = "_DashboardLayout";
+}
+
+<div class="container mt-2">
+    <div class="card">
+        <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Low Stock (Below @ViewBag.Threshold)</h4>
+            <a asp-action="Index" class="btn btn-secondary btn-sm">All Products</a>
+        </div>
+        <div class="card-body p-0">
+            @if (!Model.Any())
+            {
+                <div class="p-3 text-center text-muted">No low-stock items (all products >= @ViewBag.Threshold)</div>
+            }
+            else
+            {
+                <table class="table table-striped mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var count = 0;
+                        }
+                        @foreach (var product in Model)
+                        {
+                            <tr class="table-warning">
+                                <td>@(++count)</td>
+                                <td>@product.Name</td>
+                                <td>@product.Quantity
+                                    @* Inline low‑stock badge *@
+                                     @if (product.Quantity < 10)
+                                         {
+                                             <span class="badge bg-danger ms-2">Low Stock</span>
+                                         }
+                                   </td>
+                                <td>@product.CategoryName</td>
+                                <td>
+                                    <a asp-action="Restock" asp-route-id="@product.Id" class="btn btn-success btn-sm">Restock</a>
+                                    <a asp-action="Sell" asp-route-id="@product.Id" class="btn btn-dark btn-sm">Sell</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+

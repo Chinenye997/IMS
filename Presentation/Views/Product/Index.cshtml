@@ -1,0 +1,134 @@
+﻿@model List<Application.DTOs.ProductResponse>
+@using Application.DTOs
+@{
+    ViewData["Title"] = "Products";
+    Layout = "_DashboardLayout";
+
+    var count = 0;
+}
+
+<div class="container mt-4">
+    <div class="card">
+        
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <span>Products</span>
+            <div>
+                @if (User.Identity?.IsAuthenticated ?? false)
+                {
+                    @* <form asp-action="Logout" asp-controller="Auth" method="post" class="d-inline"> *@
+                    @*     <button type="submit" class="btn btn-danger me-2">Logout</button> *@
+                    @* </form> *@
+                }
+                else
+                {
+                    <a asp-action="Login" asp-controller="Auth" class="btn btn-secondary me-2">Login</a>
+                    <a asp-action="Register" asp-controller="Auth" class="btn btn-info me-2">Register</a>
+                }
+                
+            </div>
+        </div>
+        <div class="card-body">
+            <a asp-action="StockValueReport" asp-controller="Product" class="btn btn-outline-info mb-2"> View Stock Value Report</a><!--for report-->
+            <a asp-action="TopSellers" class="btn btn-outline-primary mb-3">Top Selling Products</a> <!--Top sell products view-->
+            <a asp-action="LowStock" class="btn btn-outline-warning mb-3 ms-2">
+                View Low Stock Items
+            </a>
+
+            <!-- Search Bar -->
+            <div class="mb-3">
+                <form asp-action="Index" method="get" class="input-group w-50">
+                    <input type="text" name="searchTerm" class="form-control"
+                           value="@ViewBag.SearchTerm" placeholder="Search by name or category..." />
+                    <button type="submit" class="btn btn-primary btn-sm" style="width:auto;padding:0.25rem 0.5rem">Search</button>
+                </form>
+                <!--Form submits search term to Index action -->
+            </div>
+
+            <!-- Filter and Sort Controls -->
+            <div class="mb-3 row">
+                <div class="col-md-4">
+                    <label class="form-label">Filter by Category</label>
+                    <select asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))"
+                            class="form-control"
+                            onchange="location.href='?categoryId=' + this.value + '&sortBy=@(ViewContext.HttpContext.Request.Query["sortBy"])&ascending=@(ViewContext.HttpContext.Request.Query["ascending"])&searchTerm=@(ViewBag.SearchTerm ?? "")'">
+                        <option value="">All Categories</option>
+                    </select>
+                    <!-- Dropdown filters by category, preserves search term -->
+                </div>
+                <div class="col-md-8">
+                    <label class="form-label">Sort By</label>
+                    <div>
+                        <a asp-action="Index" asp-route-sortBy="name" asp-route-ascending="@(ViewContext.HttpContext.Request.Query["sortBy"] != "name" || ViewContext.HttpContext.Request.Query["ascending"] == "false")"
+                           asp-route-searchTerm="@ViewBag.SearchTerm"
+                           class="btn btn-sm btn-outline-secondary me-1 @(ViewContext.HttpContext.Request.Query["sortBy"] == "name" ? "active" : "")">
+                            Name @(ViewContext.HttpContext.Request.Query["sortBy"] == "name" && ViewContext.HttpContext.Request.Query["ascending"] == "true" ? "↑" : "↓")
+                        </a>
+                        <a asp-action="Index" asp-route-sortBy="price" asp-route-ascending="@(ViewContext.HttpContext.Request.Query["sortBy"] != "price" || ViewContext.HttpContext.Request.Query["ascending"] == "false")"
+                           asp-route-searchTerm="@ViewBag.SearchTerm"
+                           class="btn btn-sm btn-outline-secondary me-1 @(ViewContext.HttpContext.Request.Query["sortBy"] == "price" ? "active" : "")">
+                            Price @(ViewContext.HttpContext.Request.Query["sortBy"] == "price" && ViewContext.HttpContext.Request.Query["ascending"] == "true" ? "↑" : "↓")
+                        </a>
+                        <a asp-action="Index" asp-route-sortBy="quantity" asp-route-ascending="@(ViewContext.HttpContext.Request.Query["sortBy"] != "quantity" || ViewContext.HttpContext.Request.Query["ascending"] == "false")"
+                           asp-route-searchTerm="@ViewBag.SearchTerm"
+                           class="btn btn-sm btn-outline-secondary @(ViewContext.HttpContext.Request.Query["sortBy"] == "quantity" ? "active" : "")">
+                            Quantity @(ViewContext.HttpContext.Request.Query["sortBy"] == "quantity" && ViewContext.HttpContext.Request.Query["ascending"] == "true" ? "↑" : "↓")
+                        </a>
+                    </div>
+                    <!--Sort buttons with preserved search term -->
+                </div>
+            </div>
+
+            @if (Model == null || !Model.Any())
+            {
+                <p class="text-muted">No products found. Add a new product or try a different search!</p>
+            }
+            else
+            {
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model)
+                        {
+                            <tr>
+                                <td>@(++count)</td>
+                                <td>@product.Name</td>
+                                <td>₦@product.Price.ToString("")</td>
+                                <!-- Quantity column -->
+                                <td>@product.Quantity</td>
+                                <td>@product.Description</td>
+                                <!--Alert column : show badge if low stock -->
+                                @if(product.Quantity < 10){
+                                    <span class="badge bg-danger">Low stock</span>
+                                }
+                                <td>@product.CategoryName</td>
+                                <td>@(product.IsActive ? "True" : "False")</td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-primary btn-sm me-1">View</a>
+                                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-secondary btn-sm me-1">Edit</a>
+                                    <a asp-action="Restock" asp-route-id="@product.Id" class="btn btn-warning btn-sm me-1">Restock</a>
+                                    <a asp-action="Sell" asp-route-id="@product.Id" class="btn btn-dark btn-sm me-1">Sell</a>
+                                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger btn-sm me-1" onclick="return confirm('Are you sure?')">Delete</a>
+                                    <a asp-action="Toggle" asp-route-id="@product.Id" asp-route-isActive="@(!product.IsActive)"
+                                       class="btn btn-sm @(product.IsActive ? "btn-secondary" : "btn-success")">
+                                        @(product.IsActive ? "Active" : "Inactive")
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div> 

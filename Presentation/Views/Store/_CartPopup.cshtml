@@ -1,0 +1,52 @@
+﻿@model List<Application.DTOs.CartItem>
+
+@if (!Model.Any())
+{
+    <p class="text-center text-muted">🛒 Your cart is empty.</p>
+}
+else
+{
+    <!-- Cart items table -->
+    <table class="table table-sm align-middle w-100">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Unit Price</th>
+                <th style="width:100px">Qty</th>
+                <th>Subtotal</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var it in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@it.PhotoUrl" style="width:40px; height:40px; object-fit:cover;" class="rounded" />
+                    </td>
+                    <td>@it.ProductName</td>
+                    <td>₦@it.UnitPrice.ToString("N0")</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-sm btn-outline-secondary update-qty" data-id="@it.ProductId" data-action="decrease">−</button>
+                            <span class="mx-2">@it.Quantity</span>
+                            <button class="btn btn-sm btn-outline-secondary update-qty" data-id="@it.ProductId" data-action="increase">+</button>
+                        </div>
+                    </td>
+                    <td>₦@((it.UnitPrice * it.Quantity).ToString("N0"))</td>
+                    <td>
+                        <button class="btn btn-sm btn-danger remove-item" data-id="@it.ProductId">✖</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between align-items-center mt-3 small">
+        <strong>Total: ₦@Model.Sum(i => i.UnitPrice * i.Quantity).ToString("N0")</strong>
+        <div class="btn-group btn-group-sm">
+            <button class="btn btn-outline-danger clear-cart me-2">Clear Cart</button>
+            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#paymentModal">Checkout</button>
+        </div>
+    </div>
+}

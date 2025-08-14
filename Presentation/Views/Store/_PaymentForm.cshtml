@@ -1,0 +1,49 @@
+﻿@model Application.DTOs.OrderRequest
+
+<!-- Modal content for payment popup -->
+<div class="modal-content">
+    <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title">💳 Select Payment Method</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body">
+        <!-- Form to submit payment method -->
+        <form id="paymentForm" asp-controller="Payment" asp-action="Process" method="post">
+            @Html.AntiForgeryToken()
+            <div class="mb-3">
+                <label for="PaymentMethod" class="form-label">Payment Method</label>
+                <select asp-for="PaymentMethod" class="form-select" required>
+                    <option value="">-- Select Method --</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Pay Now</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#paymentForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,48 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Sell Product";
+    Layout = "_DashboardLayout";
+    var productId = ViewBag.ProductId as string ?? "";
+    var productName = ViewBag.ProductName as string ?? "";
+    var currentQuantity = ViewBag.CurrentQuantity as int? ?? 0;
+    var paymentMethods = ViewBag.PaymentMethods as List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> ?? new();
+}
+
+<div class="container mt-4">
+    <!-- Page title -->
+    <h4 class="mb-3">💸 Sell Product: @productName</h4>
+
+    <!-- Form to record manual sale -->
+    <form asp-action="Sell" asp-controller="Product" method="post">
+        <input type="hidden" name="id" value="@productId" />
+        <div class="mb-3">
+            <label class="form-label">Product</label>
+            <input type="text" class="form-control" value="@productName" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Available Quantity</label>
+            <input type="text" class="form-control" value="@currentQuantity" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Quantity to Sell</label>
+            <input type="number" name="quantityToSell" class="form-control" min="1" max="@currentQuantity" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Payment Method</label>
+            <select name="paymentMethod" class="form-select" required>
+                <option value="">-- Select Method --</option>
+                @foreach (var method in paymentMethods)
+                {
+                    <option value="@method.Value">@method.Text</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Sale</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

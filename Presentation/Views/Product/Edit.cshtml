@@ -1,0 +1,132 @@
+﻿
+@model Application.DTOs.ProductRequest
+@{
+    ViewData["Title"] = "Edit Product";
+    Layout = "_DashboardLayout";
+}
+
+<div class="container py-4">
+  <h2>Edit Product</h2>
+
+  <form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <!--Hidden ID -->
+    <input type="hidden" asp-for="Id" />
+
+        <!--Existing photos with delete checkboxes -->
+        <div class="mb-3">
+            <label class="form-label">Existing Photos</label>
+            <div class="row">
+                @if (Model.PhotoUrls != null && Model.PhotoUrls.Any())
+                {
+                    @foreach (var url in Model.PhotoUrls)
+                    {
+                        <div class="col-3 text-center mb-2">
+                            <img src="@url" class="img-fluid rounded" />
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       name="photosToDelete"
+                                       value="@url"
+                                       id="del_@url.GetHashCode()" />
+                                <label class="form-check-label" for="del_@url.GetHashCode()">Delete</label>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <p class="text-muted">No photos uploaded.</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+    <!--Name -->
+    <div class="mb-3">
+      <label asp-for="Name" class="form-label">Name*</label>
+      <input asp-for="Name" class="form-control" />
+      <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <!--Price -->
+    <div class="mb-3">
+      <label asp-for="Price" class="form-label">Price*</label>
+      <input asp-for="Price" type="number" step="0.01" class="form-control" />
+      <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <!--Quantity -->
+    <div class="mb-3">
+      <label asp-for="Quantity" class="form-label">Quantity*</label>
+      <input asp-for="Quantity" type="number" class="form-control" />
+      <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <!--Category dropdown -->
+    <div class="mb-3">
+      <label asp-for="CategoryId" class="form-label">Category*</label>
+            <select asp-for="CategoryId"
+                    asp-items="ViewBag.CategoryList"
+                    class="form-select">
+            </select>
+      <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <!--Upload new photos -->
+    <div class="mb-3">
+      <label class="form-label">Upload New Photos</label>
+      <input type="file" name="ProductPhotos" multiple class="form-control" />
+      <span asp-validation-for="ProductPhotos" class="text-danger"></span>
+    </div>
+        <div class="col-md-6">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" rows="2" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+    <!--Submit -->
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+  </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+@* @model Application.DTOs.ProductResponse
+@using Application.DTOs
+@{
+	ViewData["Title"] = "Edit Product";
+	Layout = "_DashboardLayout";
+}
+
+<div class="container mt-4">
+	<div class="card">
+		<div class="card-header bg-primary text-white">Edit Product</div>
+		<div class="card-body">
+			<form asp-action="Edit" method="post">
+				<input type="hidden" asp-for="CategoryId"/>
+				<div class="mb-3">
+					<label asp-for="Name" class="form-label">Name</label>
+					<input asp-for="Name" class="form-control" required/>
+				</div>
+				<div class="mb-3">
+					<label asp-for="Price" class="form-label">Price</label>
+					<input asp-for="Price" type="number" step="0.01" class="form-control" required/>
+				</div>
+				<div class="mb-3">
+					<label asp-for="Quantity" class="form-label">Quantity</label>
+					<input asp-for="Quantity" class="form-control" required/>
+				</div>
+				
+				<button type="submit" class="btn btn-success">Update</button>
+				<a asp-action="Index" class="btn btn-secondary">Canel</a>
+			</form>
+		</div>
+	</div>
+
+</div> *@

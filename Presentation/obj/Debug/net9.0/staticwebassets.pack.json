@@ -1,0 +1,469 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Presentation.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Presentation.ewjtt9c9qa.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\Clothing store.jpeg",
+      "PackagePath": "staticwebassets\\images\\Clothing store.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\Laptop.jpeg",
+      "PackagePath": "staticwebassets\\images\\Laptop.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\Sofas.jpeg",
+      "PackagePath": "staticwebassets\\images\\Sofas.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\T-Shirt.jpeg",
+      "PackagePath": "staticwebassets\\images\\T-Shirt.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\hero\\Hero1.jpg",
+      "PackagePath": "staticwebassets\\images\\hero\\Hero1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\hero\\Hero2.jpg",
+      "PackagePath": "staticwebassets\\images\\hero\\Hero2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\hero\\Hero3.jpg",
+      "PackagePath": "staticwebassets\\images\\hero\\Hero3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\hero\\Hero4.jpg",
+      "PackagePath": "staticwebassets\\images\\hero\\Hero4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\hero\\Hero5.jpeg",
+      "PackagePath": "staticwebassets\\images\\hero\\Hero5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\laptop.jpg",
+      "PackagePath": "staticwebassets\\images\\laptop.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\images\\login-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\login-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\13886ce9-78e0-448c-937e-399d4c984953_20250710200123_Ladies1.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\13886ce9-78e0-448c-937e-399d4c984953_20250710200123_Ladies1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\2239a244-83df-4d96-8b04-ee80c95089a1.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\2239a244-83df-4d96-8b04-ee80c95089a1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\3d4df263-fed3-412d-8139-f73148f295b8_20250803164811_WIN_20250502_23_06_42_Pro.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\3d4df263-fed3-412d-8139-f73148f295b8_20250803164811_WIN_20250502_23_06_42_Pro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\53ff45a5-1908-468b-98f2-dd904581cfcd_20250803164030_WIN_20250502_23_06_42_Pro.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\53ff45a5-1908-468b-98f2-dd904581cfcd_20250803164030_WIN_20250502_23_06_42_Pro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\56283113-38bc-4d52-9972-3ff9b7d73acd.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\56283113-38bc-4d52-9972-3ff9b7d73acd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\5b9946c3-0805-4165-a5dc-74219813ad05.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\5b9946c3-0805-4165-a5dc-74219813ad05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\6ec71b30-964c-489e-ba80-6cf2523dd658.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\6ec71b30-964c-489e-ba80-6cf2523dd658.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\70c2abdc-1e6d-4be4-aea3-325a1b6b6966.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\70c2abdc-1e6d-4be4-aea3-325a1b6b6966.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\88241e86-a309-4b45-b4c0-ce78f23a4662_20250711154811_Chi.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\88241e86-a309-4b45-b4c0-ce78f23a4662_20250711154811_Chi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\9a80de4e-2ce7-4354-93b9-54edd2ae674e.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\9a80de4e-2ce7-4354-93b9-54edd2ae674e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\b7d44f11-8a98-4b3d-8af2-741280ee7191.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\b7d44f11-8a98-4b3d-8af2-741280ee7191.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\profilePics\\e38bdbb7-7057-4593-badb-5f01fdedf2fe.jpg",
+      "PackagePath": "staticwebassets\\profilePics\\e38bdbb7-7057-4593-badb-5f01fdedf2fe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\05ef6be78c184d63b2cda7cb68483180_3375304dec6b4c0bb1edb300440b5121_Ladies top 9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\05ef6be78c184d63b2cda7cb68483180_3375304dec6b4c0bb1edb300440b5121_Ladies top 9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\18b735d8cad2474f8d815164544fef1e_53c87272a6ef4940810d26ed8329d4ef_Electric Kettle 2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\18b735d8cad2474f8d815164544fef1e_53c87272a6ef4940810d26ed8329d4ef_Electric Kettle 2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\1f8f8aee9b4e4843a23202d3e2187b36_65ccb4dcf90f4b73afe59707b85707ed_Dell 1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1f8f8aee9b4e4843a23202d3e2187b36_65ccb4dcf90f4b73afe59707b85707ed_Dell 1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\25960ad7e2214fc49c8b8ef99019da2a_b20a46a6b5934a61aef220df915901b1_Furniture2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\25960ad7e2214fc49c8b8ef99019da2a_b20a46a6b5934a61aef220df915901b1_Furniture2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\28bdf2fb1d8f45bda2d0b00c01cbfcca_Dell Laptop.png",
+      "PackagePath": "staticwebassets\\uploads\\28bdf2fb1d8f45bda2d0b00c01cbfcca_Dell Laptop.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\2bf9779ff68040f6a921055677079eb2_14f0b49ae7704233820b556f9cb45e4e_Furniture9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2bf9779ff68040f6a921055677079eb2_14f0b49ae7704233820b556f9cb45e4e_Furniture9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\408d2207-d6a2-4452-b5df-ad365c63bb0c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\408d2207-d6a2-4452-b5df-ad365c63bb0c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\42ddc720-b170-497c-8e8a-f9371eab9b4e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\42ddc720-b170-497c-8e8a-f9371eab9b4e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\6b2cb48c3c3a419396205ecfcd6b8759_53e09e09e4a24d52bafb4c2f829cab1f_Hp.webp",
+      "PackagePath": "staticwebassets\\uploads\\6b2cb48c3c3a419396205ecfcd6b8759_53e09e09e4a24d52bafb4c2f829cab1f_Hp.webp"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\6fee4dce19a3445982f7ca1c510bb1c3_b8b143dd8e014a498a11e335b0e58c68_Apple.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6fee4dce19a3445982f7ca1c510bb1c3_b8b143dd8e014a498a11e335b0e58c68_Apple.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\854ba58c4efc472b962f6b9622a386e8_addc1d9129194dfdae407153896b86c1_Furniture6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\854ba58c4efc472b962f6b9622a386e8_addc1d9129194dfdae407153896b86c1_Furniture6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\a5880dce5220489b84b12bcf78b85474_56ca0fdff2fa42e69496c3f5ceecef83_guys2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a5880dce5220489b84b12bcf78b85474_56ca0fdff2fa42e69496c3f5ceecef83_guys2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\c2d027b2850242feb42cddd486e51c74_74f86ab737ee4ca1a81510ba06f53f7d_Dell Laptop.png",
+      "PackagePath": "staticwebassets\\uploads\\c2d027b2850242feb42cddd486e51c74_74f86ab737ee4ca1a81510ba06f53f7d_Dell Laptop.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\c9156174fe454b3b9a2616818204d0ba_d7bcf093743f4e5f826dc70aa4a0cde5_T-shrit1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c9156174fe454b3b9a2616818204d0ba_d7bcf093743f4e5f826dc70aa4a0cde5_T-shrit1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\f09d836d63274e2d8a20f3eb49ec74b6_5fbd84b82a1c4839ab4cf20b1ee4dc01_guys4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f09d836d63274e2d8a20f3eb49ec74b6_5fbd84b82a1c4839ab4cf20b1ee4dc01_guys4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\f2fc882b5fce43b398263300334ed13a_ce06f62344ba42feb3d718ddc051a117_Dell 1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f2fc882b5fce43b398263300334ed13a_ce06f62344ba42feb3d718ddc051a117_Dell 1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\f59daf3d1f5741468cc66b99fb863899_07942f16e76f476f9d9f1a3b696e5f32_Electric fan 4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f59daf3d1f5741468cc66b99fb863899_07942f16e76f476f9d9f1a3b696e5f32_Electric fan 4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\f5c2052229c04b57a6a6b4d60fd755da_2099387236594a178349203e0fa5c48e_Electric fan2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f5c2052229c04b57a6a6b4d60fd755da_2099387236594a178349203e0fa5c48e_Electric fan2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\fcf8cfce6b8e4d2c8ea5a5d71a0d9cee_510cb413fb974d6390e4b981417e2cf2_Furniture3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\fcf8cfce6b8e4d2c8ea5a5d71a0d9cee_510cb413fb974d6390e4b981417e2cf2_Furniture3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\IMS\\Presentation\\wwwroot\\uploads\\fcf8cfce6b8e4d2c8ea5a5d71a0d9cee_b108c2acf0ca45d9abb6c6023d349188_Furniture2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\fcf8cfce6b8e4d2c8ea5a5d71a0d9cee_b108c2acf0ca45d9abb6c6023d349188_Furniture2.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Presentation.props",
+      "PackagePath": "build\\Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Presentation.props",
+      "PackagePath": "buildMultiTargeting\\Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Presentation.props",
+      "PackagePath": "buildTransitive\\Presentation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

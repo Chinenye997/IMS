@@ -1,0 +1,19 @@
+﻿@model int? // Use nullable int to handle the status code from the query string
+@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var statusCode = Model ?? 500; // Default to 500 if no status code is provided
+}
+<div class="container">
+    <h2>Error</h2>
+    <p>Sorry, an error occurred. Status Code: @statusCode</p>
+    @if (statusCode == 403)
+    {
+        <p>You do not have permission to access this page.</p>
+    }
+    else if (statusCode == 404)
+    {
+        <p>The requested page was not found.</p>
+    }
+    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary mt-3">Back to Home</a>
+</div>

@@ -1,0 +1,144 @@
+﻿@model Dictionary<string, List<Application.DTOs.ProductResponse>>
+@{
+    ViewData["Title"] = "Shop";
+    var cart = ViewBag.Cart as List<Application.DTOs.CartItem> ?? new();
+}
+@* This prints the hidden input with the token *@
+@Html.AntiForgeryToken()
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a asp-controller="Store" asp-action="Index" class="navbar-brand text-white">SHOPPING</a>
+
+        <div class="d-flex align-items-center">
+            <a asp-controller="Store" asp-action="Cart" class="nav-link text-white position-relative me-3">
+                🛒 <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">@cart.Count</span>
+            </a>
+            <a asp-controller="Auth" asp-action="Details" class="nav-link text-white fs-4">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<form asp-action="Index" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="search" class="form-control me-2" style="width: 200px;" placeholder="Search products..."
+               value="@ViewBag.Search" />
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<div class="container">
+    <div class="row">
+        <!-- PRODUCTS LEFT -->
+        <div class="col-md-8">
+            @foreach (var category in Model)
+            {
+                <h5 class="mb-3">@category.Key</h5>
+                <div class="row">
+                    @foreach (var p in category.Value)
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <img src="@p.PhotoUrls.FirstOrDefault()" class="card-img-top" style="height:150px; object-fit:cover;" />
+                                <div class="card-body p-2">
+                                    <h6 class="mb-1">@p.Name</h6>
+                                    <p class="text-muted small">@p.Description</p>
+                                    <p class="fw-bold text-success">₦@p.Price.ToString("N0")</p>
+                                    <button class="btn btn-success btn-sm w-100 add-to-cart" data-id="@p.Id">🛒 Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- CART SIDEBAR -->
+        <div class="col-md-4">
+            <div class="card cart-sidebar">
+                <div class="card-header d-flex justify-content-between">
+                    <span><i class="bi bi-cart4"></i> Cart 🛒</span>
+                </div>
+                <div class="card-body p-2" id="cartContent">
+                    @await Html.PartialAsync("_CartPopup", ViewBag.Cart as List<CartItem>)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        @await Html.PartialAsync("_PaymentForm", new Application.DTOs.OrderRequest())
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        // Get the anti‑forgery token so all POSTs are accepted
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('cartContent');
+
+            document.body.addEventListener('click', function (e) {
+                const btn = e.target.closest('.add-to-cart');
+                if (btn) {
+                    const id = btn.dataset.id;
+                    fetch('@Url.Action("AddToCart", "Store")?productId=' + encodeURIComponent(id) + '&quantity=1', {
+                        method: 'POST', credentials: 'same-origin'
+                    })
+                        .then(r => r.text())
+                        .then(html => container.innerHTML = html)
+                        .catch(console.error);
+                    return;
+                }
+
+                        // Increase / Decrease
+                    var qBtn = e.target.closest('.update-qty')
+                    debugger;
+                    if (qBtn) {
+                      var id     = qBtn.dataset.id;
+                      var action = qBtn.dataset.action; // "increase" or "decrease"
+                      fetch('@Url.Action("UpdateCart", "Store")'
+                            + '?productId=' + encodeURIComponent(id)
+                            + '&actionType='    + encodeURIComponent(action), {
+                        method: 'POST', credentials: 'same-origin'
+                      })
+                      .then(r => r.text())
+                      .then(html => container.innerHTML = html)
+                      .catch(console.error);
+                      return;
+                    }
+
+                       // Remove item
+                var rBtn = e.target.closest('.remove-item');
+                if (rBtn) {
+                  var id = rBtn.dataset.id;
+                  fetch('@Url.Action("RemoveFromCart", "Store")'
+                        + '?productId=' + encodeURIComponent(id), {
+                    method: 'POST', credentials: 'same-origin'
+                  })
+                  .then(r => r.text())
+                  .then(html => container.innerHTML = html)
+                  .catch(console.error);
+                  return;
+                }
+
+                        // Clear cart
+                var cBtn = e.target.closest('.clear-cart');
+                if (cBtn) {
+                    fetch('@Url.Action("ClearCart", "Store")', {
+                    method: 'POST', credentials: 'same-origin'
+                    })
+                    .then(r => r.text())
+                    .then(html => container.innerHTML = html)
+                    .catch(console.error);
+                    return;
+                }
+            });
+        });
+    </script>
+}

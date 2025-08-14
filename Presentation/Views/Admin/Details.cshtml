@@ -1,0 +1,48 @@
+﻿@model Application.DTOs.UserResponse
+@{
+    ViewData["Title"] = "User Details";
+    Layout = "_DashboardLayout";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">User Details</h4>
+        </div>
+        <div class="card-body">
+            <div style="width:100%; display:block; margin-bottom:20px">
+                @if (!string.IsNullOrEmpty(Model.ProfilePhotoUrl))
+                {
+                    <img src="@Model.ProfilePhotoUrl" class="img-thumbnail" style="max-height:200px; width:200px; height:200px;" onerror="this.src='/images/default-profile.jpg';" />
+                }
+                else
+                {
+                    <img src="/images/default-profile.jpg" class="img-thumbnail" style="max-height:200px; width:200px; height:200px;" />
+                }
+            </div>
+            <dl class="row">
+                <dt class="col-sm-3">Full Name</dt>
+                <dd class="col-sm-9">@Model.FullName</dd>
+
+                <dt class="col-sm-3">Gender</dt>
+                <dd class="col-sm-9">@Model.Gender</dd>
+
+                <dt class="col-sm-3">Address</dt>
+                <dd class="col-sm-9">@Model.Address</dd>
+
+                <dt class="col-sm-3">Phone Number</dt>
+                <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Date Registered</dt>
+                <dd class="col-sm-9">@Model.DateRegistered.ToString("dd/MM/yyyy")</dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <a asp-action="AllUsers" class="btn btn-secondary">Back to Users</a>
+        </div>
+    </div>
+</div>
+

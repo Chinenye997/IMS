@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html> 
+ <head> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+     <title>@ViewData["Title"] - IMS</title> 
+          @*<!-- Bootstrap CSS --> *@
+     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="~/css//site.css" rel="stylesheet" /> 
+ </head>
+   @* <body>
+    <!-- Navigation Bar -->
+    @* <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> *@
+    @*     <div class="container-fluid"> *@
+    @*         <a class="navbar-brand" href="@Url.Action("Index", "Category")">IMS</a> *@
+    @*         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> *@
+    @*             <span class="navbar-toggler-icon"></span> *@
+    @*         </button> *@
+    @*         <div class="collapse navbar-collapse" id="navbarNav"> *@
+    @*             <ul class="navbar-nav"> *@
+    @*                 <li class="nav-item"> *@
+    @*                     <a class="nav-link" href="@Url.Action("Index", "Category")">Categories</a> *@
+    @*                 </li> *@
+    @*                 <li class="nav-item"> *@
+    @*                     <a class="nav-link" href="@Url.Action("Register", "Auth")">Register</a> *@
+    @*                 </li> *@
+    @*                 <li class="nav-item"> *@
+    @*                     <a class="nav-link" href="@Url.Action("Index", "Product")">Products</a> *@
+    @*                 </li> *@
+    @*                 @* <li class="nav-item"> *@
+    @*                     <a class="nav-link" asp-controller="Product" asp-action="StockValueReport">Stock Value Report</a> *@
+    @*                 </li>
+    @*                 <li class="nav-item"> *@
+    @*                     <a class="nav-link" href="@Url.Action("GetAllUsers", "Admin")">Users</a> *@
+    @*                 </li> *@
+    @*                 <li class="nav-item"> *@
+    @*                     <a class="nav-link" href="@Url.Action("Login", "Auth")">Login</a> *@
+    @*                 </li> *@
+    @*                 <li class="nav-item"> *@
+    @*                     <a class="nav-link" href="@Url.Action("Logout", "Auth")">Logout</a> *@
+    @*                 </li> *@
+    @*             </ul> *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </nav> *@
+
+    @* <div class="container mt-4"> *@
+    @*     @RenderBody() *@
+    @* </div> *@
+
+    @RenderBody() 
+                            
+
+    @* <!-- Bootstrap JS --> *@ 
+      <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+      @RenderSection("Scripts", required: false)
+ @* </body>  *@
+ </html>

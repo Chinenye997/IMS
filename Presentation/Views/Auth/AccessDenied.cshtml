@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card text-center shadow-sm" style="max-width: 400px;">
+        <div class="card-body">
+            <h3 class="card-title text-danger">Access Denied</h3>
+            <p>Your account is not approved yet. Please wait for admin approval.</p>
+            <p>Attempted URL: <strong>@ViewData["ReturnUrl"]</strong></p>
+            <a asp-action="Login" asp-controller="Auth" class="btn btn-primary mt-3">
+                Go to Login
+            </a>
+        </div>
+    </div>
+</div>

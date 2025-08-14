@@ -1,0 +1,271 @@
+﻿@model Application.DTOs.RegisterRequest
+@{
+    ViewData["Title"] = "Register";
+}
+
+@* <div class="d-flex align-items-center justify-content-center"
+     style="
+        min-height: 100vh;
+        background: url('/images/laptop.jpg') no-repeat center center;
+        background-size: cover;">
+    <div class="bg-white bg-opacity-15 p-4 rounded-4 shadow my-5"
+         style="max-width: 700px; width: 100%;">
+
+        <!-- Welcome message -->
+        <p class="text-center fw-bold text-primary mb-2">Welcome to my inventory!</p>
+
+        <!-- Form title -->
+        <h2 class="text-center text-primary mb-4 fw-semibold">Create Account</h2>
+
+        <form asp-action="Register" method="post" enctype="multipart/form-data" novalidate>
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="row g-1">
+                <!-- First Name -->
+                <div class="col-md-6">
+                    <label asp-for="FirstName" class="form-label text-secondary"></label>
+                    <input asp-for="FirstName"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="First name" />
+                    <span asp-validation-for="FirstName" class="text-danger small"></span>
+                </div>
+
+                <!-- Last Name -->
+                <div class="col-md-6">
+                    <label asp-for="LastName" class="form-label text-secondary"></label>
+                    <input asp-for="LastName"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="Last name" />
+                    <span asp-validation-for="LastName" class="text-danger small"></span>
+                </div>
+
+                <!-- Gender -->
+                <div class="col-md-6">
+                    <label asp-for="Gender" class="form-label text-secondary"></label>
+                    <select asp-for="Gender"
+                            class="form-control form-control-lg rounded-pill py-2">
+                        <option value="">Choose gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger small"></span>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="col-md-6">
+                    <label asp-for="PhoneNumber" class="form-label text-secondary"></label>
+                    <input asp-for="PhoneNumber"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="Phone number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                </div>
+
+                <!-- Address -->
+                <div class="col-12">
+                    <label asp-for="Address" class="form-label text-secondary"></label>
+                    <input asp-for="Address"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="Enter your home Address" />
+                    <span asp-validation-for="Address" class="text-danger small"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                    <label asp-for="Email" class="form-label text-secondary"></label>
+                    <input asp-for="Email"
+                           type="email"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="you@example.com" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <!-- Password -->
+                <div class="col-md-6">
+                    <label asp-for="Password" class="form-label text-secondary"></label>
+                    <input asp-for="Password"
+                           type="password"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="col-md-6">
+                    <label asp-for="ConfirmPassword" class="form-label text-secondary"></label>
+                    <input asp-for="ConfirmPassword"
+                           type="password"
+                           class="form-control form-control-lg rounded-pill py-2"
+                           placeholder="Confirm password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                </div>
+                <!-- Role selector -->
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Role" class="form-label text-secondary">Role...</label>
+                    <select asp-for="Role" 
+                        class="form-select form-control-lg rounded-pill py-2" required>
+                        <option value="">— Select —</option>
+                        <option value="NormalUser">Customer</option>
+                        <option value="Agent">Agent</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="ProfilePhoto" class="form-label"></label>
+                    <input asp-for="ProfilePhoto" type="file"
+                           class="form-control form-control-lg rounded-pill py-2" />
+                    <span asp-validation-for="ProfilePhoto" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary btn-lg w-100 rounded-pill mt-3">
+                Register
+            </button>
+        </form>
+
+        <!-- Login link -->
+        <p class="text-center mt-3">
+            Already have an account?
+            <a asp-action="Login" class="text-primary">Log in</a>
+        </p>
+
+        <partial name="_ValidationScriptsPartial" />
+    </div>
+</div>
+ *@
+<div class="card">
+    <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100"
+         style="background: url('/images/laptop.jpg') no-repeat center center; background-size: cover; overflow: hidden;">
+
+        <div class="bg-white bg-opacity-15 p-4 rounded-4 shadow w-100"
+             style="max-width: 700px; margin-top:40px; margin-bottom:40px">
+
+            <!-- Welcome Message -->
+            <p class="text-center fw-bold text-primary mb-2">Welcome to my inventory!</p>
+
+            <!-- Form Title -->
+            <h2 class="text-center text-primary mb-4 fw-semibold">Create Account</h2>
+
+            <form asp-action="Register" method="post" enctype="multipart/form-data" novalidate>
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="row g-3">
+                    <!-- First Name -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="FirstName" class="form-label text-secondary"></label>
+                        <input asp-for="FirstName"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="First name" required />
+                        <span asp-validation-for="FirstName" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="LastName" class="form-label text-secondary"></label>
+                        <input asp-for="LastName"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="Last name" required />
+                        <span asp-validation-for="LastName" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Gender" class="form-label text-secondary"></label>
+                        <select asp-for="Gender"
+                                    class="form-control form-control-lg rounded-pill py-2" required>
+                            <option value="">Choose gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="PhoneNumber" class="form-label text-secondary"></label>
+                        <input asp-for="PhoneNumber"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="Phone number" required />
+                        <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="col-m-6 col-12">
+                        <label asp-for="Address" class="form-label text-secondary"></label>
+                        <input asp-for="Address"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="Enter your home Address" required />
+                        <span asp-validation-for="Address" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Email" class="form-label text-secondary"></label>
+                        <input asp-for="Email"
+                               type="email"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="you@example.com" required />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Password" class="form-label text-secondary"></label>
+                        <input asp-for="Password"
+                               type="password"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="Password" required />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="ConfirmPassword" class="form-label text-secondary"></label>
+                        <input asp-for="ConfirmPassword"
+                               type="password"
+                               class="form-control form-control-lg rounded-pill py-2"
+                                   placeholder="Confirm password" required />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Role Selector -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Role" class="form-label text-secondary">Role</label>
+                        <select asp-for="Role"
+                                class="form-select form-control-lg rounded-pill py-2" required>
+                            <option value="">— Select —</option>
+                            <option value="NormalUser">Customer</option>
+                            <option value="Agent">Agent</option>
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Profile Photo -->
+                    <div class="col-md-6 col-12">
+                        <label asp-for="ProfilePhoto" class="form-label text-secondary">Profile Photo</label>
+                        <input asp-for="ProfilePhoto" type="file"
+                                   class="form-control form-control-lg rounded-pill py-2" required />
+                        <span asp-validation-for="ProfilePhoto" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit"
+                        class="btn btn-primary btn-lg w-100 rounded-pill mt-3">
+                    Register
+                </button>
+            </form>
+
+            <!-- Login Link -->
+            <p class="text-center mt-2 mb-0">
+                Already have an account?
+                <a asp-action="Login" class="text-primary">Log in</a>
+            </p>
+
+            <partial name="_ValidationScriptsPartial" />
+        </div>
+    </div>
+</div>
+

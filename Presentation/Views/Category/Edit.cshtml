@@ -1,0 +1,79 @@
+﻿@* @model Application.DTOs.CategoryResponse
+
+@{
+    ViewData["Title"] = "Edit Category";
+    Layout = "_DashboardLayout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="Name">Category Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save Changes</button>
+</form> *@
+
+@model Application.DTOs.CategoryResponse
+@{
+    ViewData["Title"] = "Edit Category";
+    Layout = "_DashboardLayout";
+}
+
+<!-- REPLACE YOUR EXISTING FORM WITH THIS CARD DESIGN -->
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-primary bg-gradient text-white py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Edit Category</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="form-floating py-2 col-12">
+                <input id="Name" asp-for="Name" class="form-control border-0 shadow" value="@Model.Name"
+                       value="@Model.Name"
+                       maxlength="100"
+                       required />
+                <label asp-for="Name" class="ms-2 text-muted"></label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <div class="text-end mt-1">
+                    <small class="text-muted">
+                        <span id="charCount">@Model.Name.Length</span>/100 characters
+                    </small>
+                </div>
+            </div>
+
+            <div class="row pt-2">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control">
+                        <i class="bi bi-check-circle"></i> Update
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-action="Index" class="btn btn-outline-secondary form-control">
+                        <i class="bi bi-x-circle"></i> Cancel
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // ADD THIS SCRIPT FOR CHARACTER COUNTING
+        document.getElementById('Name').addEventListener('input', function() {
+            document.getElementById('charCount').textContent = this.value.length;
+        });
+    </script>
+}

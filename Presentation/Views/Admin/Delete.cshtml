@@ -1,0 +1,18 @@
+﻿@model Application.DTOs.UserResponse
+@{
+	ViewData["Title"] = "Delete User";
+	Layout = "_DashboardLayout";
+}
+
+<div class="container">
+	<h3>Delete User</h3>
+	<div class="alert alert-danger">
+		<p>Are you sure you want to delete the user <strong>@Model.FullName</strong>?</p>
+		<p>This action can not be undone</p>
+	</div>
+	<form asp-action="DeleteConfirmed" asp-controller="Admin" method="post">
+		<input type="hidden" asp-for="Id"/>
+		<button type="submit" class="btn btn mt-3">Delete</button>
+		<a asp-action="GetAllUsers" asp-controller="Admin" class="btn btn-secondary mt-3">Cancel</a>
+	</form>
+</div>

@@ -1,0 +1,59 @@
+﻿@model Application.DTOs.CategoryRequest
+
+<div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCategoryModalLabel">Add New Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form asp-action="Create" asp-controller="Category" method="post" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Category Name</label>
+                        <input id="Name" asp-for="Name" class="form-control" 
+                               maxlength="100"
+                               required
+                               data-val="true"
+                               data-val-length="Maximum 100 characters allowed"
+                               data-val-length-max="100" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <div class="text-end mt-1">
+                            <small class="text-muted">
+                                <span id="modalCharCount">0</span>/100 characters
+                            </small>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ADD THIS SCRIPT FOR THE MODAL
+    document.getElementById('Name').addEventListener('input', function() {
+        document.getElementById('modalCharCount').textContent = this.value.length;
+    });
+</script>
+
+@* @section Scripts {
+    <script>
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+} *@

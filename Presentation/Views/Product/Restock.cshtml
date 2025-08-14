@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Restock Product";
+    Layout = "_DashboardLayout";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="padding:1rem 0">
+    <div class="card shadow-sm w-100" style="max-width: 480px;">
+        <div class="card-body p-4">
+            <h5 class="card-title mb-3">Restock @ViewBag.ProductName</h5>
+            <form asp-action="Restock" method="post">
+                <input type="hidden" name="id" value="@ViewBag.ProductId" />
+                <div class="mb-2">
+                    <label for="quantityToAdd" class="form-label small">Qty to Add</label>
+                    <input type="number" name="quantityToAdd" class="form-control form-control"
+                           min="1" required />
+                </div>
+                <button type="submit" class="btn btn-success btn-sm w-100">Restock</button>
+            </form>
+            <a asp-action="Index" class="d-block text-center mt-2 small">Cancel</a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,49 @@
+﻿@model List<Application.DTOs.UserResponse>
+@{
+    ViewData["Title"] = "Approve Agents";
+    Layout = "_DashboardLayout";
+}
+
+<h2>Pending Agent Approvals</h2>
+
+@if (!Model.Any())
+{
+    <p>No agents awaiting approval.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Date Registered</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var i = 0;
+            }
+            @foreach (var agent in Model)
+            {
+                <tr>
+                    <td>@(++i)</td>
+                    <td>@agent.FullName</td>
+                    <td>@agent.Email</td>
+                    <td>@agent.DateRegistered.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <form asp-action="ApproveAgent" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@agent.Id" />
+                            <button type="submit" class="btn btn-sm btn-success">
+                                UnApprove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

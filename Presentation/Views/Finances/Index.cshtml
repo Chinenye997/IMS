@@ -1,0 +1,40 @@
+﻿@model Application.DTOs.Finances
+@{
+    ViewData["Title"] = "Finances";
+    Layout = "_DashboardLayout";
+}
+
+<h2>Report Overview</h2>
+
+<div class="card mb-4">
+    <div class="card-body text-center">
+        <h5>Total Stock Value</h5>
+        <p class="h3">@Model.TotalStockValue.ToString("C")</p>
+    </div>
+</div>
+
+<h3>Top 5 Best-Selling Products</h3>
+@if (!Model.TopSellers.Any())
+{
+    <p>No sales data yet.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Units Sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.TopSellers)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.TotalSold</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
