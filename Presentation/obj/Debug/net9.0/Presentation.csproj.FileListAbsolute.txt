@@ -337,3 +337,4 @@ C:\Users\USER\Desktop\IMS\Presentation\obj\Debug\net9.0\refint\Presentation.dll
 C:\Users\USER\Desktop\IMS\Presentation\obj\Debug\net9.0\Presentation.pdb
 C:\Users\USER\Desktop\IMS\Presentation\obj\Debug\net9.0\Presentation.genruntimeconfig.cache
 C:\Users\USER\Desktop\IMS\Presentation\obj\Debug\net9.0\ref\Presentation.dll
+C:\Users\USER\Desktop\IMS\Presentation\obj\Debug\net9.0\Presentation.sourcelink.json

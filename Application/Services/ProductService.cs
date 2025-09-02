@@ -430,9 +430,9 @@ public class ProductService : IProductInterface
 
     public async Task<List<ProductResponse>> GetLowStockProductsAsync(int threshold = 10)
     {
-        return await _context.Products
+        var products = await _context.Products
         .Include(p => p.Category)
-        .Where(p => p.Quantity < threshold)
+        .Where(p => p.Quantity < threshold && p.IsActive)
         .Select(p => new ProductResponse
         {
             Id = p.Id,
@@ -444,6 +444,9 @@ public class ProductService : IProductInterface
             IsActive = p.IsActive,
             CreatedAt = p.CreatedAt
         }).ToListAsync();
+        if (!products.Any())
+            Console.WriteLine("No low stock products found with threshold " + threshold);
+        return products;
     }
 
     public async Task<CategoryResponse> Toggle(string id, bool isActive)
@@ -463,5 +466,18 @@ public class ProductService : IProductInterface
             CreatedAt = product.CreatedAt,
             CreatedBy = product.CreatedBy
         };
+    }
+
+    public async Task<bool> UpdateProductQuantityAsync(int productId, int newQuantity)
+    {
+        var product = await _context.Products.FindAsync(productId);
+        if(product == null)
+        {
+            return false;
+        }
+        product.Quantity = newQuantity;
+        await _context.SaveChangesAsync();
+        return true;
+        //throw new NotImplementedException();
     }
 }

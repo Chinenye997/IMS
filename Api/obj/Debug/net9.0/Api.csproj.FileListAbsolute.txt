@@ -157,3 +157,4 @@ C:\Users\USER\Desktop\IMS\Api\obj\Debug\net9.0\refint\Api.dll
 C:\Users\USER\Desktop\IMS\Api\obj\Debug\net9.0\Api.pdb
 C:\Users\USER\Desktop\IMS\Api\obj\Debug\net9.0\Api.genruntimeconfig.cache
 C:\Users\USER\Desktop\IMS\Api\obj\Debug\net9.0\ref\Api.dll
+C:\Users\USER\Desktop\IMS\Api\obj\Debug\net9.0\Api.sourcelink.json

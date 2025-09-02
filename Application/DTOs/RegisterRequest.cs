@@ -7,18 +7,23 @@ namespace Application.DTOs
     {
         [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Gender { get; set; }
+        [Required]
         public string Address { get; set; }
+        [Required]
         public string PhoneNumber { get; set; }
-
+        [Required]
         public string Email { get; set; }
-
-        // User chooses password
+        [Required]
+        [StringLength(100, MinimumLength = 8)]
         public string Password { get; set; }
-
-        // Confirm password (must match Password)
+        [Required]
+        [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
         public string Role { get; set; }
 
         // New: Profile image upload

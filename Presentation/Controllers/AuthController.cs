@@ -1,9 +1,11 @@
 ﻿using Application.DTOs;
 using Application.Interface;
+using Application.Services;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
@@ -16,18 +18,20 @@ namespace Presentation.Controllers
         private readonly SignInManager<UserEntity> _signInManager;
         private readonly UserManager<UserEntity> _userManager;
         private readonly IWebHostEnvironment _env;
+        private readonly IEmailService _emailService;
 
         // Inject dependencies: service for logic, identity managers for roles, hosting for file paths
         public AuthController(
             IUserInterface userService,
             SignInManager<UserEntity> signInManager,
             UserManager<UserEntity> userManager,
-            IWebHostEnvironment env)
+            IWebHostEnvironment env, IEmailService emailService)
         {
             _userService = userService;
             _signInManager = signInManager;
             _userManager = userManager;
             _env = env;  // used for profile photo path
+            _emailService = emailService;
         }
 
         // GET: /Auth/Login  - anyone can view login page
@@ -35,12 +39,12 @@ namespace Presentation.Controllers
         public IActionResult Login(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
-            return View(new LoginRequest());
+            return View(new Application.DTOs.LoginRequest());
         }
 
         // POST: /Auth/Login  - process login
         [HttpPost, AllowAnonymous]
-        public async Task<IActionResult> Login(LoginRequest request, string returnUrl = null)
+        public async Task<IActionResult> Login(Application.DTOs.LoginRequest request, string returnUrl = null)
         {
             if (!ModelState.IsValid)
             {
@@ -58,8 +62,6 @@ namespace Presentation.Controllers
                 ViewBag.Error = "Invalid email or password.";
                 return View(request);
             }
-
-
 
             // If a safe returnUrl is provided, redirect there
             if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
@@ -82,12 +84,12 @@ namespace Presentation.Controllers
         [HttpGet, AllowAnonymous]
         public IActionResult Register()
         {
-            return View(new RegisterRequest());
+            return View(new Application.DTOs. RegisterRequest());
         }
 
         // POST: /Auth/Register  - process registration
         [HttpPost, AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterRequest request)
+        public async Task<IActionResult> Register(Application.DTOs.RegisterRequest request)
         {
             if (!ModelState.IsValid)
                 return View(request);
@@ -114,6 +116,92 @@ namespace Presentation.Controllers
                 : "Registration successful, you may now log in.";
 
             return RedirectToAction("Login");
+        }
+
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return PartialView("_ForgotPasswordPartial");
+        }
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                ViewBag.Error = "Emial is required";
+                return View();
+            }
+            var user = await _userManager.FindByEmailAsync(email);
+            if(user == null)
+            {
+                ViewBag.Success = "If email exit, then a reset link will be sent to you.";
+                return View();
+            }
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user); // Generate secure token
+            var callbackUrl = Url.Action("ResetPassword", "Auth", new { token, email = user.Email }, Request.Scheme); // build a reset link
+
+            // Send email with reset link
+            await _emailService.SendEmailAsync(email, "Reset password", $"Cilck <<a href='{callbackUrl}'>here</a> to reset your password. ");
+
+            ViewBag.Success = "If the email exit, a reset link has been sent.";
+            return View();
+        }
+
+        [HttpGet, AllowAnonymous]
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (token == null || email == null)
+            {
+                return RedirectToAction("Login");
+            }
+            var model = new Application.DTOs.ResetPasswordViewModel { Token = token, Email = email };
+            return PartialView("_ForgotPasswordPartial", model);
+        }
+
+        [HttpPost, AllowAnonymous]
+        public async Task<IActionResult> ResetPassword(Application.DTOs.ResetPasswordViewModel model)
+        {
+            //if (!ModelState.IsValid)
+            //    return View(model);
+
+            //var user = await _userManager.FindByEmailAsync(model.Email);
+            //if (user == null)
+            //{
+            //    ViewBag.Success = "Password reset successful.";
+            //    return View();
+            //}
+
+            //var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            //if (result.Succeeded)
+            //{
+            //    ViewBag.Success = "Password reset successful.";
+            //    return View();
+            //}
+
+            //foreach (var error in result.Errors)
+            //    ModelState.AddModelError("", error.Description);
+            //return View(model);
+
+            if (!ModelState.IsValid)
+            {
+                return Json(new { success = false, errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage) });
+            }
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return Json(new { success = true, message = "Password reset successful." });
+            }
+
+            var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            if (result.Succeeded)
+            {
+                return Json(new { success = true, message = "Password reset successful." });
+            }
+
+            return Json(new { success = false, errors = result.Errors.Select(e => e.Description) });
         }
 
         // POST or GET: /Auth/Logout  - logs out any authenticated user

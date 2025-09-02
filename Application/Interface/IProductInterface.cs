@@ -27,6 +27,7 @@ namespace Application.Interface
         Task<List<MostSoldDto>> GetTopSellingProductsAsync(int topN = 5);
         // Get low-stock products
         Task<List<ProductResponse>> GetLowStockProductsAsync(int threshold = 10);
+        Task<bool> UpdateProductQuantityAsync(int productId, int newQuantity);
         // Record a manual sale (returns order details)
         Task<OrderResponse> SellProductAsync(string productId, int quantityToSell, string userId, string paymentMethod);
         Task<CategoryResponse> Toggle(string id, bool isActive);

@@ -245,12 +245,35 @@ namespace Presentation.Controllers
 
         // GET: /Product/LowStock - Show low-stock products
         [Authorize(Roles = "Admin,Agent")]
+        [HttpGet]
         public async Task<IActionResult> LowStock(int threshold = 10)
         {
             // Fetch all products with low stock
             var lowStockProducts = await _productService.GetLowStockProductsAsync(threshold);
             ViewBag.Threshold = threshold;
             return View(lowStockProducts);
+        }
+
+        [Authorize(Roles = "Admin,Agent")]
+        [HttpPost]
+        public async Task<IActionResult> UpdateStock(int productId, int newQuantity)
+        {
+            if (productId <= 0 || newQuantity < 0)
+            {
+                TempData["Error"] = "Invalid product ID or quantity.";
+                return RedirectToAction("LowStock");
+            }
+            Console.WriteLine($"Updating product {productId} to quantity {newQuantity}");
+            var result = await _productService.UpdateProductQuantityAsync(productId, newQuantity);
+            if (result)
+            {
+                TempData["Success"] = "Stock updated successfully.";
+            }
+            else
+            {
+                TempData["Error"] = "Failed to update stock.";
+            }
+            return RedirectToAction("LowStock");
         }
 
         public async Task<IActionResult> Toggle(string id, bool isActive)

@@ -1,59 +1,128 @@
-﻿@model List<Application.DTOs.ProductResponse>
+﻿@* @model List<Application.DTOs.ProductResponse> *@
+@* @{ *@
+@*     ViewData["Title"] = "Low Stock Products"; *@
+@*     Layout = "_DashboardLayout"; *@
+@*     var threshold = ViewBag.Threshold as int? ?? 10; *@
+@* } *@
+
+@* <div class="container mt-2"> *@
+@*     <div class="card"> *@
+@*         <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center"> *@
+@*             <h4 class="mb-0">Low Stock (Below @ViewBag.Threshold)</h4> *@
+@*             <a asp-action="Index" class="btn btn-secondary btn-sm">All Products</a> *@
+@*         </div> *@
+@*         <div class="card-body p-0"> *@
+@*             @if (!Model.Any()) *@
+@*             { *@
+@*                 <div class="p-3 text-center text-muted">No low-stock items (all products >= @ViewBag.Threshold)</div> *@
+@*             } *@
+@*             else *@
+@*             { *@
+@*                 <table class="table table-striped mb-0"> *@
+@*                     <thead class="table-light"> *@
+@*                         <tr> *@
+@*                             <th>Id</th> *@
+@*                             <th>Name</th> *@
+@*                             <th>Quantity</th> *@
+@*                             <th>Category</th> *@
+@*                             <th>Actions</th> *@
+@*                         </tr> *@
+@*                     </thead> *@
+@*                     <tbody> *@
+@*                         @{ *@
+@*                             var count = 0; *@
+@*                         } *@
+@*                         @foreach (var product in Model) *@
+@*                         { *@
+@*                             <tr class="table-warning"> *@
+@*                                 <td>@(++count)</td> *@
+@*                                 <td>@product.Name</td> *@
+@*                                 <td>@product.Quantity *@
+@*                                     @* Inline low‑stock badge *@ 
+@*                                      @if (product.Quantity < 10) *@
+@*                                          { *@
+@*                                              <span class="badge bg-danger ms-2">Low Stock</span> *@
+@*                                          } *@
+@*                                    </td> *@
+@*                                 <td>@product.CategoryName</td> *@
+@*                                 <td> *@
+@*                                     <a asp-action="Restock" asp-route-id="@product.Id" class="btn btn-success btn-sm">Restock</a> *@
+@*                                     <a asp-action="Sell" asp-route-id="@product.Id" class="btn btn-dark btn-sm">Sell</a> *@
+@*                                 </td> *@
+@*                             </tr> *@
+@*                         } *@
+@*                     </tbody> *@
+@*                 </table> *@
+@*             } *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+@model List<Application.DTOs.ProductResponse>
 @{
     ViewData["Title"] = "Low Stock Products";
     Layout = "_DashboardLayout";
+    var threshold = ViewBag.Threshold as int? ?? 10;
 }
 
-<div class="container mt-2">
-    <div class="card">
-        <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">Low Stock (Below @ViewBag.Threshold)</h4>
-            <a asp-action="Index" class="btn btn-secondary btn-sm">All Products</a>
-        </div>
-        <div class="card-body p-0">
-            @if (!Model.Any())
-            {
-                <div class="p-3 text-center text-muted">No low-stock items (all products >= @ViewBag.Threshold)</div>
-            }
-            else
-            {
-                <table class="table table-striped mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th>Category</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            var count = 0;
-                        }
-                        @foreach (var product in Model)
-                        {
-                            <tr class="table-warning">
-                                <td>@(++count)</td>
-                                <td>@product.Name</td>
-                                <td>@product.Quantity
-                                    @* Inline low‑stock badge *@
-                                     @if (product.Quantity < 10)
-                                         {
-                                             <span class="badge bg-danger ms-2">Low Stock</span>
-                                         }
-                                   </td>
-                                <td>@product.CategoryName</td>
-                                <td>
-                                    <a asp-action="Restock" asp-route-id="@product.Id" class="btn btn-success btn-sm">Restock</a>
-                                    <a asp-action="Sell" asp-route-id="@product.Id" class="btn btn-dark btn-sm">Sell</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            }
-        </div>
-    </div>
-</div>
+<div class="container mt-4">
+    <!-- Page title with threshold -->
+    <h4 class="mb-3">📉 Low Stock Products (Quantity < @threshold)</h4>
 
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">No products with low stock.</div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>
+                            <span class="badge bg-danger">@product.Quantity</span>
+                            <form asp-action="UpdateStock" method="post" class="mt-2">
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <input type="number" name="newQuantity" class="form-control form-control-sm w-50 d-inline-block" min="0" required />
+                                <button type="submit" class="btn btn-sm btn-primary ms-2">Update</button>
+                            </form>
+                        </td>
+                        <td>₦@product.Price.ToString("N0")</td>
+                        <td>@product.CategoryName</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-primary">View</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <!-- Notification for low stock -->
+    @if (Model.Any())
+    {
+        <div class="alert alert-warning mt-3">
+            <strong>Alert:</strong> @Model.Count product(s) are below the stock threshold of @threshold. Please restock soon!
+        </div>
+    }
+</div>

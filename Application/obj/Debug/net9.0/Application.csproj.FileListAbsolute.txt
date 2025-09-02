@@ -29,3 +29,4 @@ C:\Users\USER\Desktop\IMS\Application\obj\Debug\net9.0\Application.dll
 C:\Users\USER\Desktop\IMS\Application\obj\Debug\net9.0\refint\Application.dll
 C:\Users\USER\Desktop\IMS\Application\obj\Debug\net9.0\Application.pdb
 C:\Users\USER\Desktop\IMS\Application\obj\Debug\net9.0\ref\Application.dll
+C:\Users\USER\Desktop\IMS\Application\obj\Debug\net9.0\Application.sourcelink.json

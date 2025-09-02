@@ -8,12 +8,13 @@ using Microsoft.EntityFrameworkCore; // For DbContext and migrations
 var builder = WebApplication.CreateBuilder(args);
 
 // Register services
-builder.Services.AddScoped<ICategoryInterface, CategoryService>(); // Register category service
-builder.Services.AddScoped<IProductInterface, ProductService>(); // Register product service
-builder.Services.AddScoped<IUserInterface, UserService>(); // Register users
+builder.Services.AddScoped<ICategoryInterface, CategoryService>(); 
+builder.Services.AddScoped<IProductInterface, ProductService>(); 
+builder.Services.AddScoped<IUserInterface, UserService>();
 builder.Services.AddHttpContextAccessor(); // Add this after AddIdentity and before building the app
-builder.Services.AddScoped<ICartInterface, CartService>(); // for the cart
-builder.Services.AddScoped<IPaymentInterface, PaymentService>(); // for the payment
+builder.Services.AddScoped<ICartInterface, CartService>(); 
+builder.Services.AddScoped<IPaymentInterface, PaymentService>(); 
+builder.Services.AddTransient<IEmailService, EmailService>(); // register the service for email sender.
 // Register cart service
 builder.Services.AddSession();
 
